@@ -7,9 +7,9 @@ import './PostsPage.css'
 export default class PostsPage extends Component{
     render(){
     return (
-        <div className="EventsPage">
+        <div className="postsPage">
             
-            <div className="EventsPageLeft">
+            <div className="postsPageL">
 
                 <h1>Welcome, {this.props.user.name}!</h1>
                 <br/><br/>
@@ -18,7 +18,7 @@ export default class PostsPage extends Component{
                 
 
             </div>
-            <div className="EventsPageRight">
+            <div className="postsPageR">
                 <PostForm title={this.props.title} description={this.props.description} firstname={this.props.firstname}  />
             </div>
         </div>

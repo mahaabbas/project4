@@ -79,27 +79,17 @@ export default class PostDetails extends Component{
             {this.state.posts.length ?
 
             this.state.posts.map(post =>
-
-    <table class="cards-table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Categories</th>
-            <th>Created By</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{post.title} </td>
-            <td>{post.description} </td>
-            <td>{post.categories} </td>
-            <td>{post.firstname} </td>
-            <td><Delete id={post._id} getOnePost={this.getOnePost} /></td>
-        </tr>
-    </tbody>
-</table>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                  <h5 class="card-title">Title: {post.title}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Artist: {post.firstname}</h6>
+                  <p class="card-text">Description: {post.description}</p>
+                 <a href="#" class="card-link">Website: {post.website}</a>
+                <button>Delete id={post._id} getOnePost={this.getOnePost} </button>
+                </div>
+            </div>
+ 
+    
                 
                 ) :
                 'You have no previous posts' }
@@ -107,3 +97,4 @@ export default class PostDetails extends Component{
     )
    }
 }
+

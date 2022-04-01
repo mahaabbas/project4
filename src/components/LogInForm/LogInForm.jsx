@@ -44,8 +44,8 @@ export default class LoginForm extends Component {
 
     render(){
         return(
-            <div>
-                <form>
+            <div className='LogIn'>
+                <form >
                 
                     <input name="email" placeholder="Enter your email" type="text" value={this.state.email} onChange={this.handleChange}  />
                     <input type="password" name="password" placeholder="Enter your password" value={this.state.password} onChange={this.handleChange} />

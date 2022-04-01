@@ -18,7 +18,7 @@ export default class App extends Component {
   componentDidMount() {
     let token = localStorage.getItem('token')
     if (token) {
-      const payload = JSON.parse(atob(token.split('.')[1]));
+      const payload = JSON.parse(window.atob(token.split('.')[1]));
       console.log(payload) // decode token
       if (payload.exp < Date.now() / 1000) {  // Check if our token is expired, and remove if it is (standard/boilerplate)
         localStorage.removeItem('token');

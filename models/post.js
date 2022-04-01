@@ -8,6 +8,7 @@ const postSchema = new Schema({
     title: String,
     description: String,
     categories: Array,
+    website: String,
     
     user: { type: Schema.Types.ObjectId, ref: 'User' }
 }, {

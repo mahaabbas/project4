@@ -10,7 +10,8 @@ export default class PostForm extends Component {
             title: "",
             description: "",
             categories: "",
-            firstname: ""
+            firstname: "",
+            website: "",
         };
     }
     
@@ -29,7 +30,8 @@ export default class PostForm extends Component {
                     title: this.state.title,
                     description: this.state.description,
                     categories: this.props.categories,
-                    firstname: this.state.firstname
+                    firstname: this.state.firstname,
+                    website: this.state.website
                 })
                 // send the body object to server
 
@@ -39,14 +41,16 @@ export default class PostForm extends Component {
                 title: this.state.title,
                 description: this.state.description,
                 categories: this.props.categories,
-                firstname: this.state.firstname
+                firstname: this.state.firstname,
+                website: this.state.firstname
             });
             // if the event was sent over without errors, set state to empty
             this.setState({
                 title: "",
                 description: "",
                 categories: "",
-                firstname: ""
+                firstname: "",
+                website: ""
             })
         } catch (err) {
             console.error("Error:", err)
@@ -68,11 +72,13 @@ export default class PostForm extends Component {
         return(
                <div>
                    <form className="postForm">
-                       <input placeholder="enter your title here" type="text" name="title" value={this.state.title} onChange={this.handleChange} />
-
-                       <input placeholder="enter your Artist Statement here" type="text" name="description" value={this.state.description} onChange={this.handleChange} />
-
-                       <input placeholder="enter your Name here" type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} />
+                       <input className="title-form" placeholder="enter your title here" type="text" name="title" value={this.state.title} onChange={this.handleChange} />
+                       <br></br>
+                       <input className="description-form" placeholder="enter your Artist Statement here" type="text" name="description" value={this.state.description} onChange={this.handleChange} />
+                       <br></br>
+                       <input  className="name-form" placeholder="enter your Name here" type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} />
+                       <br></br>
+                       <input className="website-form" placeholder="enter your website here" type="text" name="website" value={this.state.website} onChange={this.handleChange} />
                        <br></br>
                        <button onClick={this.addPost}>Add Post</button>
                    </form>
