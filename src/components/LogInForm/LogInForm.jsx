@@ -1,21 +1,22 @@
-import { Component } from "react";
+import { Component } from 'react';
+import './LogInForm.css';
 
+export default class LoginForm extends Component {
 
-export default class LoginForm extends Component{
     state = {
         email: '',
         password: '',
         error: ''
     };
-    
-    handleChange = (evt) => {
+
+    handleChange = (e) => {
         this.setState({
-            [evt.target.name]: evt.target.value,
+            [e.target.name]: e.target.value,
             error: ''
         });
     }
 
-    handleSubmit = async (evt) => {
+    handleSignIn = async (evt) => {
         evt.preventDefault();
         try {
             // 1. POST our new user info to the server
@@ -31,29 +32,31 @@ export default class LoginForm extends Component{
             let token = await fetchResponse.json() // 3. decode fetch response: get jwt token from srv
             localStorage.setItem('token', token);  // 4. Stick token into localStorage
       
-            const userDoc = JSON.parse(window.atob(token.split('.')[1])).user; // 5. Decode the token + put user document into state
+            const userDoc = JSON.parse(atob(token.split('.')[1])).user; // 5. Decode the token + put user document into state
             this.props.setUserInState(userDoc)
       
           } catch (err) {
-            console.log('LoginForm error', err)
-            this.setState({error: "Login failed - try again"})
-        }
+              console.log("signup error", err)
+              this.setState({error: 'oops, login failed. try again'});
+          }      
     }
 
+
     render(){
-        return (
+        return(
             <div>
-            <div className="form-container" onSubmit={this.handleSubmit}>
-              <form autoComplete="off" >
-                <label>Email</label>
-                <input type="text" name="email" value={this.state.email} onChange={this.handleChange} required />
-                <label>Password</label>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-                <button type="submit">LOG IN</button>
-              </form>
+                <form>
+                
+                    <input name="email" placeholder="Enter your email" type="text" value={this.state.email} onChange={this.handleChange}  />
+                    <input type="password" name="password" placeholder="Enter your password" value={this.state.password} onChange={this.handleChange} />
+                    <br></br>
+                    <button onClick={this.handleSignIn } >Sign In</button>
+                </form>
+                <p>{this.state.error}</p>
+
+                
             </div>
-            <p className="error-message">&nbsp;{this.state.error}</p>
-          </div>
+
         )
     }
 }

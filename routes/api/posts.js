@@ -1,80 +1,54 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../../models/Post')
+const Post = require('../../models/post')
 const postCtrl = require('../../controllers/posts')
 //create 
-router.post("/", postCtrl.create)
+// router.post("/", postCtrl.create)
+router.post('/', postCtrl.create)
+router.get('/', postCtrl.getAll)
 
-
-
-//update post 
-router.put("/:id", async (req, res) => {
-    try{
-        const post = await Post.findById(req.params.id);
-        const updatedPost = await Post.findByIdAndUpdate(
-            req.params.id, {
-                $set: req.body,
-            },
-            {new: true}
-        );
-
-        res.status(200).json(updatedPost);
-
-    }catch(err){
-        res.status(500).json(err)
-    }
-})
-
-
-
-
-//delete post 
-router.delete("/:id", async (req, res) => {
-    try {
-        const post = await Post.findById(req.params.id);
-        await post.delete()
-        res.status(200).json("post has been deleted");
-
-    } catch(err){
-        res.status(500).json(err)
-
-    }
-})
-
-
-//get post 
-router.get("/:id", async (req, res) => {
-    try{
-        const post = await Post.findById(req.params.id);
-        res.status(200).json(post);
-    } catch(err){
-        res.status(500).json(err);
-    }
-})
-
-router.get("/", async (req, res) => {
-    try{
-        const post = await Post.findById(req.params.body);
-        res.status(200).json(post)
-    } catch(err){
-        res.status(500).json(err)
-    }
-})
-
-
-//categories 
-
-router.get("/", async (req, res) => {
-    const categoryName = req.query.category
-    try{
-        const post = await Post.find({categories:{
-            $in:[categoryName]
-        }});
-
-        res.status(200),json(post)
-
-    } catch(err){
-        res.status(500).json(err)
-    }
-})
 module.exports = router;
+
+
+// //update post 
+// router.put("/:id", postCtrl.update )
+    
+
+
+
+
+// //delete post 
+// router.delete("/:id", postCtrl.deletePost)
+    
+
+
+// //get post 
+// router.get("/:id", postCtrl.GetPost)
+    
+
+// router.get("/", async (req, res) => {
+//     try{
+//         const post = await Post.findById(req.params.body);
+//         res.status(200).json(post)
+//     } catch(err){
+//         res.status(500).json(err)
+//     }
+// })
+
+
+// //categories 
+
+// router.get("/", async (req, res) => {
+//     const categoryName = req.query.category
+//     try{
+//         const post = await Post.find({categories:{
+//             $in:[categoryName]
+//         }});
+
+//         res.status(200),json(post)
+
+//     } catch(err){
+//         res.status(500).json(err)
+//     }
+// })
+// module.exports = router;

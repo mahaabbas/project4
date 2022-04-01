@@ -1,86 +1,62 @@
-
-// import { Component } from 'react';
-// import './App.css';
-
-
-// import AuthPage from './pages/AuthPage/AuthPage';
-
-
-
-// class App extends Component{
-//   //stept 1
-//   state = {
-//     user:null,
-//   }
-  
-//   setUserInState = (incomingUserData) => {
-//     this.setState({ user: incomingUserData})
-//   }
-//  //step 1 ^
-//  componentDidMount() {
-//   let token = localStorage.getItem('token')
-//   if (token) {
-//     // YOU DO: check expiry!
-//     let userDoc = JSON.parse(window.atob(token.split('.')[1])).user // decode jwt token
-//     this.setState({user: userDoc})      
-//   }
-// }
-
-//   render(){
-//   return (
-//     <div className="App">
-//       <header className="App-header">PROJECT 4</header>
-//       {this.state.user ? 
-//       <h2>Youre logged in!</h2> :
-//       <AuthPage setUserInState={this.setUserInState} /> }
-//     </div>
-//   );
-// }
-// }
-
-// export default App;
-
-
 import { Component } from 'react';
-import CreatePost from './pages/CreatePost/CreatePost';
 import './App.css';
-import { Route, Switch, Redirect } from 'react-router-dom'
-import NavBar from "./components/Navbar/NavBar"
-// import Post from './components/post/post';
-// import Detail from './pages/detailview/Detail';
-import Home from './pages/homepage/Home';
-import Detail from './pages/detailview/Detail';
-import LogIn from './components/SignUpForm/LoginForm/LoginForm';
+import AuthPage from './pages/AuthPage/AuthPage.jsx';
+import PostsPage from './pages/PostsPage/PostsPage.jsx';
+import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-class App extends Component{
-  
-  
-  render (){
-  return (
-    <div className="App">
+export default class App extends Component {
 
-      <NavBar />
-      <Switch>
-      <Route path='/posts/new' render={
-        (props) => <CreatePost {...props}/>
-         }/>
-      <Route path='/posts/detail' render={
-        (props) => <Detail {...props}/>
-         }/>
-         <Route path="/home" render={
-        (props) => <Home {...props}/>
-         }/>
-         <Route path="/login" render={
-        (props) => <LogIn {...props}/>
-         }/>
-      </Switch>
-       <Redirect to="/home"/>
-      
-      {/* routes come under here  */}
-      
-    </div>
-  );
+  state = {
+    user: null,
+  }
+
+  setUserInState = (incomingUserData) => {
+    this.setState({ user: incomingUserData })
+  }
+
+  componentDidMount() {
+    let token = localStorage.getItem('token')
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      console.log(payload) // decode token
+      if (payload.exp < Date.now() / 1000) {  // Check if our token is expired, and remove if it is (standard/boilerplate)
+        localStorage.removeItem('token');
+        token = null;
+      } else { // token not expired! our user is still 'logged in'. Put them into state.
+        let userDoc = payload.user // grab user details from token
+        this.setState({user: userDoc})      
+      }
+    }
+  }
+
+  render() {
+    return (
+      <main className="App">
+        {this.state.user ?
+          <Switch>
+
+            <Route path='/index' render={(props) => (
+              <PostsPage {...props} user={this.state.user} />
+            )} />
+            <Route path='/profile' render={(props) => (
+              <ProfilePage {...props} user={this.state.user} />
+            )} />
+
+            {/* <Route path='/' render={(props) => (
+            <AuthPage {...props} />
+          )}  /> */}
+
+            <Redirect to="/index" />
+
+
+
+          </Switch>
+          :
+
+          <AuthPage setUserInState={this.setUserInState} />
+        }
+      </main>
+    )
+  }
 }
-}
-
-export default App;
