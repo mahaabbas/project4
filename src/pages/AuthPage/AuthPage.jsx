@@ -19,7 +19,7 @@ export default class AuthPage extends Component {
             <div className="AuthPage">
                
                 <div className="AuthPage">
-                    <h1 className="text" onClick={() => this.setState(
+                    <h1 className="textAuth" onClick={() => this.setState(
                         { showLogin: !this.state.showLogin }
                     )}>
                         {this.state.showLogin
