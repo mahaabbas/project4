@@ -7,21 +7,21 @@ export default class PostsPage extends Component{
 
     render(){
     return (
-        <div className="EventsPage">
+        <div className="PostsPage">
             
-            <div className="EventsPageLeft">
+          <div className="PostsPageL">
 
-                <h1>Welcome, {this.props.user.name}!</h1>
-                <br/><br/>
-                <Link className="btn" to='/profile'>View Profile</Link><br/><br/>
+            <h2 className="welcome">Welcome to the Artists Collective, {this.props.user.name}!
+                <br /><br />
+                <Link className="btn VP" to='/profile'>View Profile</Link><br/><br />
                 <UserLogout />
-                
+                <br/>
+                <div className="PostsPageRight">
+                <Link className="btn VP" to='/posts'>Add Post</Link>
 
-            </div>
-            <div className="EventsPageRight">
-            <Link className="btn" to='/posts'>Add Post</Link><br/><br/>
-                
-            </div>
+                </div> 
+            </h2>
+          </div>
         </div>
     )
     }

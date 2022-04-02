@@ -6,7 +6,7 @@ import UserLogout from '../UserLogout/UserLogout';
 const UserInfo = (props) => {
   return (
       <div id="container">
-        <Link className="btnlink" to='/index'>Home</Link>
+        <Link className="btnlink btn VP" to='/index'  >Home</Link>
         <br/><br/>
         <UserLogout />
       </div>

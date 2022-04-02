@@ -8,22 +8,24 @@ export default class ProfilePage extends React.Component {
 
   render() {
     return (
-      <main className="profile">
+      <>
+      <main className="nav-justify-content-center">
         <nav>
         <UserInfo />
         </nav>
-        <div className="card">
-        <h2>Name: {this.props.user.name}</h2>
+        <div className="card-nav-item1">
+        <h2 className='item1'>Name: {this.props.user.name}</h2>
         </div> 
         <br/>
-        <div className="card">
+        <div className="card-nav-item">
         <h2>Email: {this.props.user.email}</h2>
         </div>
+      </main>
         <br/><br/>
         <h3>Past Posts Created:</h3>
         <PostDetails user={this.props.user} />
-        <div></div>
-      </main>
+        
+      </>
 
     )
   }
