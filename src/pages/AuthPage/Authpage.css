@@ -1,0 +1,55 @@
+ .textAuth{
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border: solid 6px black;
+    height: 350px;
+    width: 500px;
+}
+.btn {
+    border: 2px solid black;
+    color: black;
+    font-size: 16px;
+
+}
+.btn:hover{
+    color: white;
+    background-color: black;
+    
+}
+
+
+
+
+
+.title{
+    font-size: 70px;
+    display: flex;
+    text-shadow: 3px 3px white;
+    color: black;
+    padding-left: 15px;
+}
+
+.AuthPageBG {
+    background-image: url('../../../assets/pm.bg.png');
+    min-height: 100vh;
+    width: auto;
+    background-color: rgb(255, 254, 254);
+   
+    z-index: -5;
+}
+
+.AuthPage{
+    padding-top: 65px;
+    display: inline-block;
+    height: 171px;
+    width: 501px;
+    
+    
+}
+.AuthPage > .Log-in {
+    padding-top: 50px;
+
+}

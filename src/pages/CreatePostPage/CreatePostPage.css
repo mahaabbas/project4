@@ -1,0 +1,29 @@
+
+
+.text{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(161, 14, 14);
+    margin-top: 15px;
+    background-image: url('../../../assets/pm.bg2.png');
+}
+.btn.VP {
+    color: rgb(0, 0, 0);
+    background-color: white;
+    display: inline;
+    align-self: center;
+    margin-top: 15px;
+}
+h3{
+    padding-bottom: 20px;
+    color: white;
+}
+
+div.UserLogOut{
+    margin-top: 15px;
+}
+
+.PageRight{
+    margin-top: 200px;
+    height: 30px;
+}

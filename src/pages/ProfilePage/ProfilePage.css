@@ -1,0 +1,17 @@
+.nav-justify-content-center{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    background-color:#003e9f ;
+    color: white;
+}
+
+.card-nav-item {
+    padding-left: 25px;
+}
+
+
+
+.card-nav-item1{
+    padding-left: 25px;
+}

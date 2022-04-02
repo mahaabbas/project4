@@ -1,0 +1,38 @@
+.PostsPage{
+    background-image: url('../../../assets/pm.bg.png');
+    min-height: 100vh;
+    width: auto;
+    background-color: rgb(255, 254, 254);
+    height: 100%;
+    
+    
+}
+
+.PostsPageL .welcome{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    top: 0;
+    background-color: rgb(170, 44, 44);
+    text-decoration: 3px 3px rgb(0, 0, 0);
+    color: white;
+    height: 350px;
+    width: 400px;
+    padding-top: 40px;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 6px solid black;
+    flex: 4;
+    margin-left: 20px;
+}
+.btn.VP{
+    color: rgb(0, 0, 0);
+    background-color: white;
+    display: inline;
+}
+.btn.VP:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+
