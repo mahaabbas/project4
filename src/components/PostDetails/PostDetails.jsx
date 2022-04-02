@@ -88,7 +88,7 @@ export default class PostDetails extends Component{
                   <h5 class="card-title">Title: {post.title}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Artist:{post.firstname}</h6>
                   <p class="card-text">Description: {post.description}</p>
-                 <a href="#{post.website}" class="card-link">You can see my work here! {post.website}</a>
+                 <a href="#{post.website}" class="card-link">This is where my work is! {post.website}</a>
                 <Delete id={post._id} getOnePost={this.getOnePost}/> 
                 </div>
                 <br />

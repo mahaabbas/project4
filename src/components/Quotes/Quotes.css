@@ -1,0 +1,17 @@
+.body-text {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+.quotes-container{
+    background-color: rgb(46, 120, 247);
+    width: 396px;
+    height: auto;
+    font-size: 18px;
+    padding: 10px;
+    border: 6px solid black;
+    margin-top: 37px;
+    
+}
+.textheading {
+    font-size: 18px;
+}
