@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Delete from '../Delete/Delete'
-import { Route, Switch, Redirect } from 'react-router-dom';
+
 
 
 
@@ -68,26 +68,7 @@ export default class PostDetails extends Component{
         }
     }
 
-    updateOnePost = async (id) => {
-        
-        try{
-            let jwt = localStorage.getItem('token')
-            let fetchPostsResponse = await fetch(`/api/${id}`
-            , {
-                method: 'PUT', 
-                headers: {
-                    "Content-Type": "application/json",
-                    'Authorization': 'Bearer ' + jwt
-                }
-            })
-            let newPostList = await fetchPostsResponse.json();
-            console.log("this is new list", newPostList)
-            this.setState({posts: newPostList}) 
-    } catch (err) {
-        console.log("this is one error", err);
-    }
-    
-}
+
 
 
     componentDidMount() {
@@ -100,13 +81,13 @@ export default class PostDetails extends Component{
             {this.state.posts.length ?
 
             this.state.posts.map(post =>
-                <div class="card" style="width: 18rem;">
+                <div class="card" >
                   <div class="card-body">
                   <h5 class="card-title">Title: {post.title}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Artist: {post.firstname}</h6>
                   <p class="card-text">Description: {post.description}</p>
-                 <a href="#" class="card-link">Website: {post.website}</a>
-                <button>Delete id={post._id} getOnePost={this.getOnePost} </button>
+                 <a href="{post.website}" class="card-link">Website: {post.website}</a>
+                <Delete id={post._id} getOnePost={this.getOnePost}/> 
                 </div>
             </div> ) :
                 'You have no previous posts' }

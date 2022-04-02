@@ -3,6 +3,7 @@ import './App.css';
 import AuthPage from './pages/AuthPage/AuthPage.jsx';
 import PostsPage from './pages/PostsPage/PostsPage.jsx';
 import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
+import CreatePostPage from './pages/CreatePostPage/CreatePostPage.jsx';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
@@ -18,8 +19,7 @@ export default class App extends Component {
   componentDidMount() {
     let token = localStorage.getItem('token')
     if (token) {
-      const payload = JSON.parse(window.atob(token.split('.')[1]));
-      console.log(payload) // decode token
+      const payload = JSON.parse(atob(token.split('.')[1])); // decode token
       if (payload.exp < Date.now() / 1000) {  // Check if our token is expired, and remove if it is (standard/boilerplate)
         localStorage.removeItem('token');
         token = null;
@@ -42,14 +42,12 @@ export default class App extends Component {
             <Route path='/profile' render={(props) => (
               <ProfilePage {...props} user={this.state.user} />
             )} />
-
-            {/* <Route path='/' render={(props) => (
-            <AuthPage {...props} />
-          )}  /> */}
+            
+            <Route path='/posts' render={(props) => (
+              <CreatePostPage {...props} user={this.state.user} />
+            )} />
 
             <Redirect to="/index" />
-
-
 
           </Switch>
           :

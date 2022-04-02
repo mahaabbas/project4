@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import UserLogout from '../../components/UserLogout/UserLogout';
-import './PostsPage.css'
+import PostForm from '../../components/PostForm/PostForm';
+
+
 
 export default class PostsPage extends Component{
 
@@ -19,7 +21,7 @@ export default class PostsPage extends Component{
 
             </div>
             <div className="EventsPageRight">
-            <Link className="btn" to='/posts'>Add Post</Link><br/><br/>
+            <PostForm onSubmit={this.handleChange} />
                 
             </div>
         </div>
