@@ -1,5 +1,5 @@
 # Artists Collective 
-[Trello Board](https://trello.com/b/3EDkoUVF/project-4)
+[Trello Board](https://trello.com/b/3EDkoUVF/project-4)  ||  [Artists Collective](https://artits-collective.herokuapp.com/)
 #### Oh hey there! are you an aspiring artist whose tired of searching through your documnents trying to keep track of your artist statements/work well, do i have the app for you! 
 
 ####  **The Artists Collective** is my attempt of creating a platform dedicated solely to any sort of artistic practice. Users are able to post their work and keep track of them while also getting a little extra boost in motivation through the handy quotes on the home page!  
