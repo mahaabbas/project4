@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 import './PostForm.css'
-//add lat and lng and time when event create and send to server
+
 export default class PostForm extends Component {
 
 
@@ -34,29 +34,22 @@ export default class PostForm extends Component {
                     firstname: this.state.firstname,
                     website: this.state.website
                 })
-                // send the body object to server
 
             })
             let serverResponse = await fetchResponse.json()
-            this.props.updatePost({
-                title: this.state.title,
-                description: this.state.description,
-                categories: this.state.categories,
-                firstname: this.state.firstname,
-                website: this.state.website
-            });
-            // if the event was sent over without errors, set state to empty
             this.setState({
                 title: "",
                 description: "",
                 categories: "",
                 firstname: "",
-                website: ""
+                website: "",
             })
+            window.location.href = '/';
         } catch (err) {
             console.error("Error:", err)
         }
     }
+
 
     handleChange = e => {
         console.log(e.target.checkValidity());
@@ -64,15 +57,18 @@ export default class PostForm extends Component {
             [e.target.name]: e.target.value
             
         })
+
+        
     }
 
-    
+
+  
 
 
     render() {
         return(
                <div className='form'>
-                   <form className="row mb-3">
+                   <form className="row mb-3" >
                         <label className="col-sm-2 col-form-label">Title</label><input className="form-control" placeholder="enter your title here" type="text" name="title" value={this.state.title} onChange={this.handleChange} />
                        <br></br>
                        <label className="col-sm-2 col-form-label">Artist Statement</label><input className="form-control" placeholder="enter your Artist Statement here" type="text" name="description" value={this.state.description} onChange={this.handleChange} />
