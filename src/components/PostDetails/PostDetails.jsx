@@ -68,6 +68,27 @@ export default class PostDetails extends Component{
         }
     }
 
+    updateOnePost = async (id) => {
+        
+        try{
+            let jwt = localStorage.getItem('token')
+            let fetchPostsResponse = await fetch(`/api/${id}`
+            , {
+                method: 'PUT', 
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': 'Bearer ' + jwt
+                }
+            })
+            let newPostList = await fetchPostsResponse.json();
+            console.log("this is new list", newPostList)
+            this.setState({posts: newPostList}) 
+    } catch (err) {
+        console.log("this is one error", err);
+    }
+    
+}
+
 
     componentDidMount() {
         this.getUserPosts()
@@ -87,11 +108,7 @@ export default class PostDetails extends Component{
                  <a href="#" class="card-link">Website: {post.website}</a>
                 <button>Delete id={post._id} getOnePost={this.getOnePost} </button>
                 </div>
-            </div>
- 
-    
-                
-                ) :
+            </div> ) :
                 'You have no previous posts' }
         </div>
     )

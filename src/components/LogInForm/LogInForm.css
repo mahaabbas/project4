@@ -1,9 +1,15 @@
 
 
 .LogIn{
-background-color: white;
-height: 100px;
-padding: 16px;
+background-color: rgb(246, 241, 186);
+height: 134px;
+width: 318px;
+padding: 24px;
 line-height: 1.5;
 border: black solid 6px;
+}
+
+form {
+    align-items: center;
+
 }

@@ -13,7 +13,7 @@ class UserLogOut extends React.Component {
   render() {
     return (
       <div className='UserLogOut'>
-        <button onClick={this.handleLogout}>Logout</button>
+        <button className="btn" onClick={this.handleLogout}>Logout</button>
       </div>
     );
   }

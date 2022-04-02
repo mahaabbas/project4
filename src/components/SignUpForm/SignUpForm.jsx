@@ -1,5 +1,5 @@
 import { Component } from 'react';
-
+import './SignUpForm.css'
 export default class SignUpForm extends Component {
 
     state = {
@@ -48,14 +48,14 @@ export default class SignUpForm extends Component {
         const disable = this.state.password !== this.state.confirm;
         return(
             <div>
-                <form>
+                <form className='Signup'>
                     
                         <input name="name" type="text" placeholder="Enter your name" value={this.state.name} onChange={this.handleChange}  />
-                    
+                         <br></br>
                         <input name="email" type="text" placeholder="Enter your email" value={this.state.email} onChange={this.handleChange}  />
-                    
+                        <br></br>
                         <input name="password" type="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
-                    
+                        <br></br>
                         <input name="confirm" type="password" placeholder="Re-enter password" value={this.state.confirm} onChange={this.handleChange} />
                     
                     <br></br>

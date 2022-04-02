@@ -13,7 +13,10 @@ export default class AuthPage extends Component {
 
     render() {
         return (
+           
             <div className="AuthPageBG">
+             <h2 className="title">Artists Collective</h2>
+            <div className="AuthPage">
                
                 <div className="AuthPage">
                     <h1 className="text" onClick={() => this.setState(
@@ -21,9 +24,9 @@ export default class AuthPage extends Component {
                     )}>
                         {this.state.showLogin
                             ?
-                            <>Don't have an account? <button>Register</button></>
+                            <>Don't have an account? <br></br> <button className="btn">Register</button></>
                             :
-                            <>Have an account? <button>Sign In</button></>
+                            <>Have an account? <br></br> <button className="btn">Sign In</button></>
                         }</h1>
                 </div>
 
@@ -50,6 +53,8 @@ export default class AuthPage extends Component {
                     }
                 </div>
             </div>
+            </div>
+            
         )
     }
 }

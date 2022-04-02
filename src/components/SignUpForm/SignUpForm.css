@@ -1,0 +1,9 @@
+.Signup {
+    display: block;
+    line-height: 2;
+    background-color: rgb(180, 49, 49);
+    height: 230px;
+    width: 330px;
+    padding: 30px;
+    border: black solid 6px;
+}

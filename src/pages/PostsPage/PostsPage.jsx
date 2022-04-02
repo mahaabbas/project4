@@ -11,10 +11,11 @@ export default class PostsPage extends Component{
             
             <div className="postsPageL">
 
-                <h1>Welcome, {this.props.user.name}!</h1>
+                <h1>Welcome, {this.props.user.name}!
                 <br/><br/>
                 <Link className="btn" to='/profile'>View Profile</Link><br/><br/>
                 <UserLogout />
+                </h1>
                 
 
             </div>
