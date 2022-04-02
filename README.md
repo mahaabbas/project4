@@ -24,17 +24,17 @@ ___
 ____
 
 ## Stills from the App 
-![1](readmeimages\4.png)
+![4](readmeimages\4.png)
 ____
-![p2](readmeimages\6.png)
+![6](readmeimages\6.png)
 ___
-![3](readmeimages\12.png)
+![12](readmeimages\12.png)
 ____
-![1](readmeimages\8.png)
+![8](readmeimages\8.png)
 ____
-![p2](readmeimages\9.png)
+![9](readmeimages\9.png)
 ___
-![3](readmeimages\10.png)
+![10](readmeimages\10.png)
 
 ___
 
