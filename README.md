@@ -13,6 +13,8 @@ ___
 + Node
 + Bootstrap
 + Atlas DB
++ [Api used](https://api.quotable.io/random)
+
 ___
 
 ## My Initial Design for the App 
