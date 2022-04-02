@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import PostDetails from "../../components/PostDetails/PostDetails";
 import UserLogout from '../../components/UserLogout/UserLogout';
 import './PostsPage.css'
 
@@ -21,6 +22,9 @@ export default class PostsPage extends Component{
 
                 </div> 
             </h2>
+            <div>
+                <PostDetails />
+            </div>
           </div>
         </div>
     )
