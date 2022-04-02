@@ -16,30 +16,30 @@ ___
 ___
 
 ## My Initial Design for the App 
-![1](imagesRM\1.png)
+![1](imagesRM/1.png)
 ____
-![p2](imagesRM\p2.png)
+![p2](imagesRM/p2.png)
 ___
-![3](imagesRM\3.png)
+![3](imagesRM/3.png)
 ____
 
 ## Stills from the App 
-![5](imagesRM\5.png)
+![5](imagesRM/5.png)
 ____
-![11actual](imagesRM\11actual.png)
+![11actual](imagesRM/11actual.png)
 ___
-![7](imagesRM\7.png)
+![7](imagesRM/7.png)
 ____
-![8](imagesRM\8.png)
+![8](imagesRM/8.png)
 ____
-![9](imagesRM\9.png)
+![9](imagesRM/9.png)
 ___
 
 
 ___
 
 ## ERD 
-![11](readmeimages\p4.png)
+![11](readmeimages/p4.png)
 
 ## refrences 
 
